@@ -1,0 +1,12 @@
+*.fits
+*.json
+*.png
+*.venv
+
+__pychache__/
+
+basic-graphs/
+Fitted-Graphs/
+LiME-Graphs/
+
+testing.py

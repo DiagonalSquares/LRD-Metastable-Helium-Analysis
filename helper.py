@@ -24,7 +24,7 @@ def plot_data(wavelength, flux, path, data_id):
 
 def get_id(filename):
     inital_filtering = re.search(r"lp_(\d+)_(\d+)", filename)
-    data_id = inital_filtering.group(1) 
+    data_id = inital_filtering.group(2) 
     return data_id
 
 def filter_out_filename_extension(filename):

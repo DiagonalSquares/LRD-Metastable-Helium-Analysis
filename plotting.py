@@ -19,10 +19,10 @@ for filename in data_files:
     
     #opening fits files
     hdul = fits.open(file_path)
-    #print_hdul_headers(hdul)
+    print_hdul_headers(hdul)
 
     wavelength, flux, flux_error = get_data(hdul)
-    path = "graphs"
+    path = "basic-graphs"
     plot_data(wavelength, flux, path, filter_out_filename_extension(filename))
 
 hdul.close()
