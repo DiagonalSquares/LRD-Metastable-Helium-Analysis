@@ -3,7 +3,7 @@
 *.png
 *.venv
 
-__pychache__/
+__pycache__/
 
 basic-graphs/
 Fitted-Graphs/

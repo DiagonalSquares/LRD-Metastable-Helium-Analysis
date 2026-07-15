@@ -37,8 +37,8 @@ data_directory = Path(research_directory/"data")
 data_files = os.listdir(data_directory)
 
 redshifts = {"28074": 2.26, "40579": 3.1, "17775": 3.501, "154183": 3.55}
-he1_fluxes = {"28074": 82.11, "40579": 95, "17775": 2467.9, "154183": 2.7} #these fluxes were already calculated by previous research
-line = 'H1_10941A' #Paschun Gamma Line
+he1_fluxes = {"28074": 82.11, "40579": 95, "17775": 24.679, "154183": 2.7} #these fluxes were already calculated by previous research
+line = 'H1_10941A' #Paschen Gamma Line
 flux_data = {}
 
 open("flux.json", "w")
@@ -50,7 +50,7 @@ for filename in data_files:
     file_path = data_directory/filename
     hdul = fits.open(file_path)
     wavelength, flux, flux_error = get_data(hdul)    
-    wavelength = np.array([w * 10000 for w in wavelength]) #units are originally in micrometers; multiplying by 10 thousand to adjust for angstrom
+    wavelength = np.array([(w * u.um).to(u.AA).value for w in wavelength]) #units are originally in micrometers; using astropy to convert to angstrom
     flux, flux_error = fix_flux_units(flux, flux_error, wavelength)
 
     #Create the observation
@@ -85,7 +85,8 @@ for filename in data_files:
         profile_flux, profile_flux_error, intg_flux = calculate_flux(spec, line)
         flux_data[filename] = {
             "Flux": profile_flux,
-            "Flux Error": profile_flux_error
+            "Flux Error": profile_flux_error,
+            "Integrated FLux": intg_flux,
         }
         print("profile flux: " + str(profile_flux))
         print("Flux error:", profile_flux_error)
