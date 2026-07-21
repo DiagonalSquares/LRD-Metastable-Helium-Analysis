@@ -6,21 +6,6 @@ import json
 from astropy import units as u
 
 from helper import *
-
-def calculate_flux(spec, line): #finding flux
-    profile_flux = spec.frame.loc[[line], ['profile_flux']].iloc[0, 0]
-    profile_flux_err = spec.frame.loc[[line], ['profile_flux_err']].iloc[0, 0]
-    intg_flux = spec.frame.loc[[line], ['intg_flux']].iloc[0,0]
-    return profile_flux, profile_flux_err, intg_flux
-
-def fix_flux_units(flux, flux_error, wavelength): #this is done because flux is originally in Jansky, but we need a different unit to properly function within LiME-Graphs
-    fixed_flux = []
-    fixed_flux_error = []
-    for i in range(len(flux)):
-        #credit to Akshaj for these unit conversions
-        fixed_flux.append((flux[i] * u.uJy).to(u.erg / (u.cm * u.cm * u.s * u.AA), equivalencies=u.spectral_density(wavelength[i] * u.AA)).value)
-        fixed_flux_error.append((flux_error[i] * u.uJy).to(u.erg / (u.cm * u.cm * u.s * u.AA), equivalencies=u.spectral_density(wavelength[i] * u.AA)).value)
-    return np.array(fixed_flux), np.array(fixed_flux_error)
         
 #path to data
 research_directory = Path("/home/ianbishop/research-internship/")
@@ -30,7 +15,6 @@ data_directory = Path(research_directory/"data")
 data_files = os.listdir(data_directory)
 
 redshifts = {"28074": 2.26, "40579": 3.1, "17775": 3.501, "154183": 3.55}
-he1_fluxes = {"28074": 82.11, "40579": 95, "17775": 24.679, "154183": 2.7} #these fluxes were already calculated by previous research
 line = 'H1_10941A' #Paschen Gamma Line
 flux_data = {}
 
@@ -70,7 +54,7 @@ for filename in data_files:
     if not os.path.exists(path):
         os.makedirs(path)
     image_name = path + "/" + filter_out_filename_extension(filename)
-    spec.plot.spectrum(rest_frame=True, fname=image_name, show_cont=True)
+    spec.plot.spectrum(rest_frame=True, fname=image_name, show_cont=True, bands=matched_lines)
     
     try:
         profile_flux, profile_flux_error, intg_flux = calculate_flux(spec, line)

@@ -9,20 +9,6 @@ from pathlib import Path
 
 from helper import *
 
-def find_closest_index(measured_ratio, matrix, temperature_range):
-    closest_diff = sys.maxsize
-    for y in range(len(matrix)):
-        for x in range(len(matrix[0])):
-            temperature = temperature_range[x]
-            if (temperature > 15000 or temperature < 5000):
-                continue
-            current_diff = abs(matrix[y, x] - measured_ratio)
-            if (current_diff < closest_diff):
-                closest_x = x
-                closest_y = y
-                closest_diff = current_diff
-    return closest_y, closest_x
-
 He1 = pn.RecAtom('He', 1)
 H1 = pn.RecAtom('H', 1)
 
