@@ -38,7 +38,7 @@ source .venv/bin/activate.fish
 
 ### 6. Install Requirements
 ```bash
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ### 7. Navigate to src
