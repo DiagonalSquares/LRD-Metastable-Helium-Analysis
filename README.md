@@ -5,7 +5,7 @@ Analysis of the He I 10830 line in relation to the Hydrogen 10941 line in LRDs
 
 ### 1. Clone the repository
 ```bash 
-git clone https://github.com/DiagonalSquares/LRD-Metastable-Helium-Analysis.github
+git clone https://github.com/DiagonalSquares/LRD-Metastable-Helium-Analysis.git
 ```
 
 ### 2. Navigate to repository
