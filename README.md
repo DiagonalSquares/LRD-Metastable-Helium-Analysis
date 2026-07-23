@@ -5,11 +5,13 @@ Analysis of the He I 10830 line in relation to the Hydrogen 10941 line in LRDs
 
 ### 1. Clone the repository
 ```bash 
-git clone https://github.com/DiagonalSquares/LRD-Metastable-Helium-Analysis.github```
+git clone https://github.com/DiagonalSquares/LRD-Metastable-Helium-Analysis.github
+```
 
 ### 2. Navigate to repository
 ```bash
-cd LRD-Metastable-Helium-Analysis```
+cd LRD-Metastable-Helium-Analysis
+```
 
 ### 3. Install python3
 ```bash
@@ -22,7 +24,8 @@ sudo apt install python3 python3-venv
 
 ### 4. Initialize virtual environment
 ```bash
-python3 -m venv .venv```
+python3 -m venv .venv
+```
 
 ### 5.Start virtual environment
 ```bash
@@ -35,17 +38,20 @@ source .venv/bin/activate.fish
 
 ### 6. Install Requirements
 ```bash
-pip install requirements.txt```
+pip install requirements.txt
+```
 
 ### 7. Navigate to src
 ```bash
-cd src```
+cd src
+```
 
 ## Usage
 
 For any of the following files, to run it, use the following command:
 ```bash
-python3 <filename.py>```
+python3 <filename.py>
+```
 
 ### plotting.py
 Makes graphs on the raw data given for flux and wavelength.
