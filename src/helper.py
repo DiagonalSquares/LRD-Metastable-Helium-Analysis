@@ -25,7 +25,7 @@ def print_hdul_headers(hdul):
 def plot_data(wavelength, flux, path, data_id):
     plt.plot(wavelength, flux, drawstyle = 'steps-mid')
     plt.xlabel("Wavelength($\\mu$m)")
-    plt.ylabel("Flux(uJy)") #note to self: be sure to normalize units
+    plt.ylabel("Flux(uJy)")
     
     if not os.path.exists(path):
         os.makedirs(path)

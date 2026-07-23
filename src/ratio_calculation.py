@@ -25,7 +25,9 @@ density_range = np.logspace(8, 13, num=STEPS)
 
 matrix = np.zeros((STEPS, STEPS))
 
-abundance_ratio = 0.002
+with open("../json_files/abundance.json", "r") as file:
+    abundance_ratio = json.load(file)
+
 for y in range(STEPS):
     for x in range(STEPS): 
         temperature = temperature_range[x]

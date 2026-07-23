@@ -140,8 +140,6 @@ plt.ylabel(r"Electron Density (cm$^{-3}$)")
 plt.savefig("abundance-ratios")    
 print("Filled Matrix:", matrix)
 
-write_data_to_json(abundance_ratios, "../json_files/abundance.json")
-
 abundances = []
 for filename in data_files:
     data_id = get_id(filename)
@@ -149,3 +147,4 @@ for filename in data_files:
     abundances.append(abundance)
 
 print("overall average:", take_average_1d(abundances))
+write_data_to_json(take_average_1d(abundances), "../json_files/abundance.json")
