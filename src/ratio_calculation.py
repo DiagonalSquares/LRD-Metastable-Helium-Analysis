@@ -78,8 +78,7 @@ for filename in data_files:
     except Exception as e:
         print("Didn't have flux", e) #temporary fix
     
-#plt.imshow(matrix, extent=(START_TEMP, STOP_TEMP, START_DEN, STOP_DEN), aspect="auto", origin="lower")
-#plt.colorbar(label="Emissivity Ratio")
+
 X, Y = np.meshgrid(temperature_range, density_range)
 ax = plt.gca()    
 cmesh = plt.pcolormesh(X, Y, matrix)
@@ -89,8 +88,8 @@ plt.scatter(nearest_temeperatures, nearest_densities, marker="x", color="red")
 plt.title(r"Emissivity Ratios (He I $\lambda10830$ / H I Paschen $\gamma$)")
 plt.xlabel("Temperature (K)")
 plt.ylabel(r"Electron Density (cm$^{-3}$)")
-#for i in range(len(labels)):
-#    plt.text(nearest_temeperatures[i], nearest_densities[i], labels[i])
+for i in range(len(labels)):
+    plt.text(nearest_temeperatures[i], nearest_densities[i], labels[i])
 
 plt.savefig("predicted-ratios")    
 print("Filled Matrix:", matrix)

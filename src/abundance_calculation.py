@@ -9,6 +9,7 @@ import math
 from astropy import units as u
 
 from helper import *
+from flux_calculation import set_up_spec, calculate_flux, graph_fitted
 
 def calculate_abundance(measured_ratio, predicted_ratio):
     pass
@@ -28,6 +29,39 @@ def take_average_1d(array):
         total += array[i]
     return total / len(array)
 
+def fill_ratio_matrix(temperature_range, density_range, atom1, atom2, wave1, wave2, steps):
+    matrix = np.zeros((steps, steps))
+
+    for y in range(steps):
+        for x in range(steps): 
+            temperature = temperature_range[x]
+            density = density_range[y] 
+
+            atom1_emission = atom1.getEmissivity(temperature, density, wave=wave1)
+            atom2_emission = atom2.getEmissivity(temperature, density, wave=wave2)
+
+            ratio = (atom1_emission/atom2_emission)
+            matrix[y, x] = ratio
+
+    return matrix
+
+def edit_matrix(matrix, value, steps):
+    new_matrix = np.zeros((steps, steps))
+    for y in range(steps):
+        for x in range(steps): 
+            new_matrix[y, x] = matrix[y, x] * value
+    return new_matrix
+
+def calculate_ratio(spec, line1, line2):
+    flux1 = calculate_flux(spec, line1)[0]
+    print(line1 + " flux: " + str(flux1)) 
+
+    flux2 = calculate_flux(spec, line2)[0]
+    print(line2 + " flux: " + str(flux2)) 
+
+    ratio = flux1/flux2
+    return ratio
+
 #path to data
 data_directory = Path("../data")
 
@@ -37,100 +71,60 @@ data_files = get_data_files("data")
 He1 = pn.RecAtom('He', 1)
 H1 = pn.RecAtom('H', 1)
 
-START_TEMP = 11000
-STOP_TEMP = 15000
-START_DEN = 1e12
-STOP_DEN = 1e13
+START_TEMP = 5000
+STOP_TEMP = 25000
+START_DEN = 8
+STOP_DEN = 13
 
 STEPS = 50
 
 temperature_range = np.linspace(START_TEMP, STOP_TEMP, num=STEPS)
-density_range = np.linspace(12, 13, num=STEPS)
+density_range = np.logspace(START_DEN, STOP_DEN, num=STEPS)
 
-matrix = np.zeros((STEPS, STEPS))
+He1_abundance_wavelength = 7065
+Halpha_abundance_wavelength = 6563
 
-for y in range(STEPS):
-    for x in range(STEPS): 
-        temperature = temperature_range[x]
-        density = density_range[y] 
+matrix = fill_ratio_matrix(temperature_range, density_range, H1, He1, Halpha_abundance_wavelength, He1_abundance_wavelength, STEPS)
 
-        He1_emission = He1.getEmissivity(temperature, density, wave=7065)
-        H1_emission = H1.getEmissivity(temperature, density, wave=6563)
-        #print("Predicted Helium:", str(He1_10830))
-        #print("Predicted Hydrogen:", str(H1_10941))
-
-        #this ratio is the predicted value, not the actual measured value
-        ratio = (He1_emission/H1_emission)
-        #print("ratio:", str(ratio))
-        matrix[y, x] = ratio
-
-average_predicted_abundance = take_average_2d(matrix)
-print("average_predicted_abundance:", average_predicted_abundance)
+average_predicted_ratio = take_average_2d(matrix)
+print("average_predicted_abundance:", average_predicted_ratio)
 
 redshifts = {"28074": 2.26, "40579": 3.1, "17775": 3.501, "154183": 3.55}
 helium_line = 'He1_7065A'
 hydrogen_line = 'H1_6563A'
-
-bands = lime.lines_frame()
-print(bands.index.to_list())
 
 nearest_temeperatures = []
 nearest_densities = []
 ratios = []
 abundance_ratios = {}
 for filename in data_files:
-    #from https://lime-stable.readthedocs.io/en/latest/2_guides/0_creating_observations.html
-    print("\n\n\nProcessing " + filename + "...")
+    spec = set_up_spec(filename, redshifts, data_directory)
 
-    file_path = data_directory/filename
-    hdul = fits.open(file_path)
-    wavelength, flux, flux_error = get_data(hdul)    
-    wavelength = np.array([(w * u.um).to(u.AA).value for w in wavelength]) #units are originally in micrometers; using astropy to convert to angstrom
-    flux, flux_error = fix_flux_units(flux, flux_error, wavelength)
-
-    #Create the observation
-    data_id = get_id(filename)
-    print("Redshift Value:", redshifts[data_id])
-    spec = lime.Spectrum(wavelength, flux, flux_error, redshift=redshifts[data_id], units_wave="AA", units_flux="FLAM")
-
-    spec.fit.continuum(degree_list=[3, 6, 6], emis_threshold=[3, 2, 1.5], plot_steps=True, log_scale=True)
-    candidate_lines = spec.retrieve.lines_frame()
-    matched_lines = spec.infer.peaks_troughs(candidate_lines, emission_type=True, sigma_threshold=3, plot_steps=True, log_scale=True)
     try:
-        spec.fit.bands(helium_line, cont_source='adjacent')
-        helium_flux = calculate_flux(spec, helium_line)[0]
-        print("helium flux:", helium_flux) 
-
+        
         path = "../helium_flux_graphs"
-        if not os.path.exists(path):
-            os.makedirs(path)
-        image_name = path + "/" + filter_out_filename_extension(filename)
+        graph_fitted(spec, path, filename) 
 
-        spec.plot.bands(fname=image_name + "_fitted")
-
-        spec.fit.bands(hydrogen_line, cont_source='adjacent')
-        hydrogen_flux = calculate_flux(spec, hydrogen_line)[0]
-        print("hydrogen flux:", hydrogen_flux)
         path = "../hydrogen_flux_graphs"
-        if not os.path.exists(path):
-            os.makedirs(path)
-        image_name = path + "/" + filter_out_filename_extension(filename)
-
-        spec.plot.bands(fname=image_name + "_fitted")
-        ratio = helium_flux/hydrogen_flux
+        graph_fitted(spec, path, filename)
+        
+        ratio = calculate_ratio(spec, helium_line, hydrogen_line)
         ratios.append(ratio)
         print("Ratio:", ratio)
         
-        abundance_ratio = ratio * average_predicted_abundance
+        abundance_ratio = ratio * average_predicted_ratio
         print("abundance_ratio:", abundance_ratio)
-        abundance_ratios[data_id] = abundance_ratio
+        abundance_ratios[filename] = abundance_ratio
     except Exception as e:
         print("Something went wrong when calculating ratio:", e)
 
 plt.clf()
-plt.imshow(matrix, extent=(START_TEMP, STOP_TEMP, START_DEN, STOP_DEN), aspect="auto", origin="lower")
-plt.colorbar(label="Emissivity Ratio")
-plt.scatter(nearest_temeperatures, nearest_densities, marker="x", color="red")
+X, Y = np.meshgrid(temperature_range, density_range)
+ax = plt.gca()    
+cmesh = plt.pcolormesh(X, Y, matrix)
+plt.colorbar(cmesh)
+ax.set_yscale('log')
+
 plt.title(r"Emissivity Ratios (He I $\lambda10830$ / H I Paschen $\gamma$)")
 plt.xlabel("Temperature (K)")
 plt.ylabel(r"Electron Density (cm$^{-3}$)")
@@ -142,9 +136,12 @@ print("Filled Matrix:", matrix)
 
 abundances = []
 for filename in data_files:
-    data_id = get_id(filename)
-    abundance = abundance_ratios[data_id]
-    abundances.append(abundance)
+    try:
+        abundance = abundance_ratios[filename]
+        print(filename + " abundance: " + str(abundance))
+        abundances.append(abundance)
+    except Exception as e:
+        print(filename + " no abundance found: " + str(e))
 
 print("overall average:", take_average_1d(abundances))
 write_data_to_json(take_average_1d(abundances), "../json_files/abundance.json")

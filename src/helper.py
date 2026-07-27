@@ -33,20 +33,20 @@ def plot_data(wavelength, flux, path, data_id):
     #plt.xlim(4, 4.5) #scaling to see the bins
     plt.savefig(path + "/" + data_id + '_graph.png', dpi=150) #saving plot as an image
 
-def calculate_flux(spec, line): #finding flux
+def get_flux(spec, line): #finding flux
     profile_flux = spec.frame.loc[[line], ['profile_flux']].iloc[0, 0]
     profile_flux_err = spec.frame.loc[[line], ['profile_flux_err']].iloc[0, 0]
-    intg_flux = spec.frame.loc[[line], ['intg_flux']].iloc[0,0]
-    return profile_flux, profile_flux_err, intg_flux
+    return profile_flux, profile_flux_err
 
 def fix_flux_units(flux, flux_error, wavelength): #this is done because flux is originally in Jansky, but we need a different unit to properly function within LiME-Graphs
     fixed_flux = []
     fixed_flux_error = []
+    fixed_wavelength = np.array([(w * u.um).to(u.AA).value for w in wavelength]) #units are originally in micrometers; using astropy to convert to angstrom
     for i in range(len(flux)):
         #credit to Akshaj for these unit conversions
-        fixed_flux.append((flux[i] * u.uJy).to(u.erg / (u.cm * u.cm * u.s * u.AA), equivalencies=u.spectral_density(wavelength[i] * u.AA)).value)
-        fixed_flux_error.append((flux_error[i] * u.uJy).to(u.erg / (u.cm * u.cm * u.s * u.AA), equivalencies=u.spectral_density(wavelength[i] * u.AA)).value)
-    return np.array(fixed_flux), np.array(fixed_flux_error)
+        fixed_flux.append((flux[i] * u.uJy).to(u.erg / (u.cm * u.cm * u.s * u.AA), equivalencies=u.spectral_density(fixed_wavelength[i] * u.AA)).value)
+        fixed_flux_error.append((flux_error[i] * u.uJy).to(u.erg / (u.cm * u.cm * u.s * u.AA), equivalencies=u.spectral_density(fixed_wavelength[i] * u.AA)).value)
+    return fixed_wavelength, np.array(fixed_flux), np.array(fixed_flux_error)
 
 def get_id(filename):
     inital_filtering = re.search(r"lp_(\d+)_(\d+)", filename)
