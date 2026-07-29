@@ -111,5 +111,14 @@ Same funciton are ratio_calculation.py, but creates alternative graphs using a l
 ### helper.py*
 Not really a file that you run, just includes helpful functions used by the other files.
 
+## Report Compilation
+The pdf of the report is included within the "report" directory as main.pdf.
+If you wish to compile the document yourself though, use the following commands:
+```bash
+cd report
+pdflatex main.tex
+cd ..
+```
+
 # Credits
 I wanted to give a huge thank you to Akshaj Vyas (https://github.com/SmoolPerson) for helping me debug parts of my program throughout this project. I also wanted to express my gratitude to Kelcey Davis for guiding me and giving feedback throughout this project. This project was done under the Institute for Computing in Research.
