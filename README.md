@@ -41,34 +41,31 @@ source .venv/bin/activate.fish
 pip install -r requirements.txt
 ```
 
-### 7. Navigate to src
-```bash
-cd src
-```
-
 ## Usage
 
 for quick usage without getting into the nitty-gritty, run the following commands in descending order:
 ```bash
+cd src
 python3 plotting.py
 python3 flux_calculation.py
 python3 flux_error_calculation.py
 python3 abundance_calculation
 python3 ratio_calculation.py
 python3 ratio_calculation_alternate.py
+cd ..
 ```
 
 ### plotting.py
 run using:
 ```bash
-python3 plotting.py
+python3 src/plotting.py
 ```
 Makes graphs on the raw data given for flux and wavelength.
 
 ### flux_calculation.py
 run using:
 ```bash
-python3 flux_calculation.py
+python3 src/flux_calculation.py
 ```
 Calculates the flux values for the Paschen Gamma line(H1 10941) and outputs the calculated flux values into "flux.json" for ratio_calculation.py to use.
 
@@ -77,14 +74,14 @@ Also plots 2 graphs for each file in the data directory: one graph shows the fit
 ### flux_error_calculation.py
 run using:
 ```bash
-python3 flux_error_calculation.py
+python3 src/flux_error_calculation.py
 ```
 Calculates the positive and negative flux errors for the He I 10830 values. These values are outputted to "flux_error.json" for ratio_calculation.py to use.
 
 ### abundance_calculation.py
 run using:
 ```bash
-python3 abundance_calculation.py
+python3 src/abundance_calculation.py
 ```
 Calculates abundance ratio between helium and hydrogen, and outputs it to "abundance,json" for ratio_calculation.py to use.
 
@@ -93,7 +90,7 @@ note: as of now, this file does not contribute to the overall outputted graphs.
 ### ratio_calculation.py
 run using:
 ```bash
-python3 ratio_calculation.py
+python3 src/ratio_calculation.py
 ```
 Calculates the predicted ratios between the metastable helium line and the Paschen Gamma line using pyneb and calculates the actual measured ratios from the flux calculated in flux_calculation.py as well as the helium fluxes given by other sources.
 
@@ -104,7 +101,7 @@ Also makes a graph of the density lines along with the measured ratios and its c
 ### ratio_calculation_alternate.py
 run using:
 ```bash
-python3 ratio_calculation_alternate.py
+python3 src/ratio_calculation_alternate.py
 ```
 Same funciton are ratio_calculation.py, but creates alternative graphs using a lower density range. This uses the same data that ratio_calculation.py requires to run.
 
