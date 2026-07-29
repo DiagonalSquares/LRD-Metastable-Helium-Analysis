@@ -48,6 +48,16 @@ cd src
 
 ## Usage
 
+for quick usage without getting into the nitty-gritty, run the following commands in descending order:
+```bash
+python3 plotting.py
+python3 flux_calculation.py
+python3 flux_error_calculation.py
+python3 abundance_calculation
+python3 ratio_calculation.py
+python3 ratio_calculation_alternate.py
+```
+
 ### plotting.py
 run using:
 ```bash
@@ -76,7 +86,9 @@ run using:
 ```bash
 python3 abundance_calculation.py
 ```
-Calculates abundance ratio between helium and hydrogen, and outputs it to "abundance,json" for ratio_calculation.py to use
+Calculates abundance ratio between helium and hydrogen, and outputs it to "abundance,json" for ratio_calculation.py to use.
+
+note: as of now, this file does not contribute to the overall outputted graphs.
 
 ### ratio_calculation.py
 run using:
@@ -88,6 +100,13 @@ Calculates the predicted ratios between the metastable helium line and the Pasch
 Graphs the pyneb prediction matrix, with markers showing where the LRDs are closest to the predicted values.
 
 Also makes a graph of the density lines along with the measured ratios and its corresponding errors.
+
+### ratio_calculation_alternate.py
+run using:
+```bash
+python3 ratio_calculation_alternate.py
+```
+Same funciton are ratio_calculation.py, but creates alternative graphs using a lower density range. This uses the same data that ratio_calculation.py requires to run.
 
 ### helper.py*
 Not really a file that you run, just includes helpful functions used by the other files.
