@@ -16,8 +16,8 @@ print(H1.labels)
 
 START_TEMP = 5000
 STOP_TEMP = 25000
-START_DEN = 9
-STOP_DEN = 15
+START_DEN = 5
+STOP_DEN = 13
 
 STEPS = 100
 
@@ -101,7 +101,7 @@ adjust_text(
 )
 '''
 
-plt.savefig("predicted-ratios-higher-range")    
+plt.savefig("predicted-ratios-lower-range")    
 print("Filled Matrix:", matrix)
 
 #final plot
@@ -120,7 +120,7 @@ for i in range(len(densities_index)):
     flux_ratios = []
     for j in range(STEPS):
         flux_ratios.append(matrix[densities_index[i], j])
-    plt.plot(temperature_range, flux_ratios, label=str(f"{density_range[densities_index[i]]/1e11:.3f}"), linestyle=":")
+    plt.plot(temperature_range, flux_ratios, label=str(f"{density_range[densities_index[i]]/1e8:.3f}"), linestyle=":")
 
 positive_errors = []
 negative_errors = []
@@ -141,7 +141,6 @@ print("nearest_temeperatures:", nearest_temeperatures)
 print("measured_ratios:", measured_ratios)
 plt.errorbar(nearest_temeperatures, measured_ratios, fmt='o', yerr=[positive_errors, negative_errors])
 
-
 texts = []
 for i in range(len(labels)):
     texts.append(plt.text(nearest_temeperatures[i], measured_ratios[i], labels[i]))
@@ -153,5 +152,5 @@ adjust_text(
 
 plt.xlabel("Temperature (K)")
 plt.ylabel("Flux Ratio (He I $\\lambda10830$ / H I Paschen $\\gamma$)")
-plt.legend(title=r"Electron Density (1e11cm$^{-3}$)")
-plt.savefig("density-lines-higher-range")    
+plt.legend(title=r"Electron Density (1e8cm$^{-3}$)")
+plt.savefig("density-lines-lower-range")    

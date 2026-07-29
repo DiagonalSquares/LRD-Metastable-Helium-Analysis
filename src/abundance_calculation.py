@@ -131,7 +131,7 @@ plt.ylabel(r"Electron Density (cm$^{-3}$)")
 #for i in range(len(labels)):
 #    plt.text(nearest_temeperatures[i], nearest_densities[i], labels[i])
 
-plt.savefig("abundance-ratios")    
+plt.savefig("emissivity-ratios")    
 print("Filled Matrix:", matrix)
 
 abundances = []

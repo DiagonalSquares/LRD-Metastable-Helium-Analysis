@@ -72,7 +72,7 @@ def find_closest_index(measured_ratio, matrix, temperature_range):
     for y in range(len(matrix)):
         for x in range(len(matrix[0])):
             temperature = temperature_range[x]
-            if (temperature > 15000 or temperature < 5000):
+            if (temperature > 15000 or temperature < 10000):
                 continue
             current_diff = abs(matrix[y, x] - measured_ratio)
             if (current_diff < closest_diff):
