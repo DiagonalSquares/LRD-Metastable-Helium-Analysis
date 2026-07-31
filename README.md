@@ -147,7 +147,7 @@ sudo pacman -S libreoffice-fresh
 ### Compilation
 
 ```bash
-libreoffice --headless --convert-to pdf --outdir ./media/presentation ./media/presentation/Helium.odp
+libreoffice --headless --convert-to pdf --outdir ./slides ./slides/Helium.odp
 ```
 
 # Credits
