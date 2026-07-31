@@ -120,6 +120,8 @@ sudo apt install texlive-base texlive-latex-base texlive-latex-recommended texli
 # For Arch Linux:
 sudo pacman -S texlive-basic texlive-latex texlive-latexrecommended texlive-latexextra texlive-fontsrecommended
 ```
+
+### Compilation
 ```bash
 cd report
 pdflatex main.tex
@@ -127,6 +129,25 @@ bibtex main
 pdflatex main.tex
 pdflatex main.tex
 cd ..
+```
+
+## Slides
+
+To compile the slides (found within the "slides" directory), use the following command:
+
+### Installation
+```bash
+# For Debian Based Systems:
+sudo apt install libreoffice-impress
+
+# For Arch Linux:
+sudo pacman -S libreoffice-fresh
+```
+
+### Compilation
+
+```bash
+libreoffice --headless --convert-to pdf --outdir ./media/presentation ./media/presentation/Helium.odp
 ```
 
 # Credits
