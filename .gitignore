@@ -1,11 +1,10 @@
 *.json
-*.png
 *.venv
 
 __pycache__/
 
 basic-graphs/
 Fitted-Graphs/
-LiME-Graphs/
+Matched-Lines/
 helium_flux_graphs/
 hydrogen_flux_graphs/
