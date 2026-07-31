@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99e (TeX Live 2026/Arch Linux)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: aasjournalv7.bst
+Database file #1: main.bib
+Warning--string name "sept" is undefined
+--line 161 of file main.bib
+Warning--entry type for "reback2020pandas" isn't style-file defined
+--line 220 of file main.bib
+Warning--string name "july" is undefined
+--line 400 of file main.bib
+Warning--string name "june" is undefined
+--line 413 of file main.bib
+Reallocated wiz_functions (elt_size=8) to 6000 items from 3000.
+You've used 26 entries,
+            3426 wiz_defined-function locations,
+            923 strings with 22207 characters,
+and the built_in function-call counts, 19134 in all, are:
+= -- 1212
+> -- 2210
+< -- 4
++ -- 726
+- -- 765
+* -- 2184
+:= -- 3637
+add.period$ -- 26
+call.type$ -- 26
+change.case$ -- 118
+chr.to.int$ -- 26
+cite$ -- 26
+duplicate$ -- 496
+empty$ -- 792
+format.name$ -- 818
+if$ -- 3617
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 44
+newline$ -- 112
+num.names$ -- 104
+pop$ -- 121
+preamble$ -- 1
+purify$ -- 118
+quote$ -- 0
+skip$ -- 462
+stack$ -- 0
+substring$ -- 694
+swap$ -- 88
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 260
+warning$ -- 0
+while$ -- 83
+width$ -- 0
+write$ -- 363
+(There were 4 warnings)

@@ -1,0 +1,251 @@
+\begin{thebibliography}{}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\href{#1}{#1}}
+\providecommand{\dodoi}[1]{doi:~\href{http://doi.org/#1}{\nolinkurl{#1}}}
+\providecommand{\doeprint}[1]{\href{http://ascl.net/#1}{\nolinkurl{http://ascl.net/#1}}}
+\providecommand{\doarXiv}[1]{\href{https://arxiv.org/abs/#1}{\nolinkurl{https://arxiv.org/abs/#1}}}
+
+% type= article
+\bibitem[{E. Aver {et~al.}(2013)Aver, Olive, Porter, \& Skillman}]{Aver_2013}
+Aver, E., Olive, K.~A., Porter, R., \& Skillman, E.~D. 2013,
+  \bibinfo{title}{The primordial helium abundance from updated emissivities,}
+  Journal of Cosmology and Astroparticle Physics, 2013, 017–017,
+  \dodoi{10.1088/1475-7516/2013/11/017}
+
+% type= article
+\bibitem[{E. Aver {et~al.}(2015)Aver, Olive, \& Skillman}]{Aver_2015}
+Aver, E., Olive, K.~A., \& Skillman, E.~D. 2015, \bibinfo{title}{The effects of
+  He I λ10830 on helium abundance determinations,} Journal of Cosmology and
+  Astroparticle Physics, 2015, 011–011, \dodoi{10.1088/1475-7516/2015/07/011}
+
+% type= article
+\bibitem[{D.~A. Berg {et~al.}(2025)Berg, Sanders, Shapley, Topping, Reddy,
+  Skillman, Aver, Cullen, Donnan, Dunlop, Jones, Khostovan, McLeod, Narayanan,
+  Oesch, Pahl, Pettini, Schreiber, \& Stark}]{Berg_2026}
+Berg, D.~A., Sanders, R.~L., Shapley, A.~E., {et~al.} 2025, \bibinfo{title}{The
+  AURORA Survey: Robust Helium Abundances at High Redshift Reveal a
+  Subpopulation of Helium-enhanced Galaxies in the Early Universe,} The
+  Astrophysical Journal, 996, 68, \dodoi{10.3847/1538-4357/ae18db}
+
+% type= misc
+\bibitem[{K. Davis {et~al.}(2026)Davis, Brooks, Simons, Trump, Barro, Haro,
+  Backhaus, Cleri, de~la Vega, Finkelstein, Giavalisco, Grogin, Hirschmann,
+  Hutchison, Kocevski, Koekemoer, Lambrides, Llerena, Lucas, Marshall, McGrath,
+  Papovich, Starrs, Taylor, Sanderbeck, Wang, \&
+  Wuyts}]{davis2026oceansabsorptionhighresolutionnirspec}
+Davis, K., Brooks, M., Simons, R.~C., {et~al.} 2026, OCEANS of Absorption:
+  High-resolution NIRSpec Spectroscopy Reveals Diverse Balmer-line Absorption
+  in Little Red Dots, \doarXiv{2606.00258}
+
+% type= article
+\bibitem[{A. de~Graaff {et~al.}(2025)de~Graaff, Rix, Naidu, Labbé, Wang, Leja,
+  Matthee, Katz, Greene, Hviding, Baggen, Bezanson, Boogaard, Brammer, Dayal,
+  van Dokkum, Goulding, Hirschmann, Maseda, McConachie, Miller, Nelson, Oesch,
+  Setton, Shivaei, Weibel, Whitaker, \& Williams}]{de_Graaff_2025}
+de~Graaff, A., Rix, H.-W., Naidu, R.~P., {et~al.} 2025, \bibinfo{title}{A
+  remarkable ruby: Absorption in dense gas, rather than evolved stars, drives
+  the extreme Balmer break of a little red dot at <i>z</i> = 3.5,}
+  Astronomy \& Astrophysics, 701, A168, \dodoi{10.1051/0004-6361/202554681}
+
+% type= article
+\bibitem[{V. {Fern{\'a}ndez} {et~al.}(2024){Fern{\'a}ndez}, {Amor{\'\i}n},
+  {Firpo}, \& {Morisset}}]{LiMe_paper}
+{Fern{\'a}ndez}, V., {Amor{\'\i}n}, R., {Firpo}, V., \& {Morisset}, C. 2024,
+  \bibinfo{title}{{LIME: A LIne MEasuring library for large and complex
+  spectroscopic data sets. I. Implementation of a virtual observatory for JWST
+  spectra},} \aap, 688, A69, \dodoi{10.1051/0004-6361/202449224}
+
+% type= article
+\bibitem[{S.~L. Finkelstein {et~al.}(2025)Finkelstein, Bagley, Arrabal~Haro,
+  Dickinson, Ferguson, Kartaltepe, Kocevski, Koekemoer, Lotz, Papovich,
+  Pérez-González, Pirzkal, Somerville, Trump, Yang, Yung, Fontana, Grazian,
+  Grogin, Kewley, Kirkpatrick, Larson, Pentericci, Ravindranath, Wilkins,
+  Almaini, Amorín, Barro, Bhatawdekar, Bisigello, Brooks, Buat, Buitrago,
+  Burgarella, Calabrò, Castellano, Cheng, Cleri, Cole, Cooper, Cooper,
+  Costantin, Cox, Croton, Daddi, Davis, Dekel, Elbaz, Fernández, Fujimoto,
+  Gandolfi, Gardner, Gawiser, Giavalisco, Gómez-Guijarro, Guo, Gupta, Hathi,
+  Harish, Henry, Hirschmann, Hu, Hutchison, Iyer, Jaskot, Jha, Jung, Kassin,
+  Kokorev, Kurczynski, Leung, Llerena, Long, Lucas, Lu, McGrath, McIntosh,
+  Merlin, Mobasher, Morales, Napolitano, Pacucci, Pandya, Rafelski, Rodighiero,
+  Rose, Santini, Seillé, Simons, Shen, Straughn, Tacchella, Taylor,
+  Vanderhoof, Vega-Ferrero, Weiner, Willmer, Zhu, Bell, Wuyts, Holwerda, Wang,
+  Wang, Zavala, \& collaboration)}]{Finkelstein_2025}
+Finkelstein, S.~L., Bagley, M.~B., Arrabal~Haro, P., {et~al.} 2025,
+  \bibinfo{title}{The Cosmic Evolution Early Release Science Survey (CEERS),}
+  The Astrophysical Journal Letters, 983, L4, \dodoi{10.3847/2041-8213/adbbd3}
+
+% type= article
+\bibitem[{K.~D. Gordon(2024)Gordon}]{Gordon2024}
+Gordon, K.~D. 2024, \bibinfo{title}{dust\_extinction: Interstellar Dust
+  Extinction Models,} Journal of Open Source Software, 9, 7023,
+  \dodoi{10.21105/joss.07023}
+
+% type= article
+\bibitem[{K.~D. {Gordon} {et~al.}(2024){Gordon}, {Fitzpatrick}, {Massa},
+  {Bohlin}, {Chastenet}, {Murray}, {Clayton}, {Lennon}, {Misselt}, \&
+  {Sandstrom}}]{2024ApJ...970...51G}
+{Gordon}, K.~D., {Fitzpatrick}, E.~L., {Massa}, D., {et~al.} 2024,
+  \bibinfo{title}{{Expanded Sample of Small Magellanic Cloud Ultraviolet Dust
+  Extinction Curves: Correlations between the 2175 {\r{A}} Bump, q $_{PAH}$,
+  Ultraviolet Extinction Shape, and N(H I)/A(V)},} \apj, 970, 51,
+  \dodoi{10.3847/1538-4357/ad4be1}
+
+% type= article
+\bibitem[{C.~R. Harris {et~al.}(2020)Harris, Millman, van~der Walt, Gommers,
+  Virtanen, Cournapeau, Wieser, Taylor, Berg, Smith, Kern, Picus, Hoyer, van
+  Kerkwijk, Brett, Haldane, del R{\'{i}}o, Wiebe, Peterson,
+  G{\'{e}}rard-Marchant, Sheppard, Reddy, Weckesser, Abbasi, Gohlke, \&
+  Oliphant}]{harris2020array}
+Harris, C.~R., Millman, K.~J., van~der Walt, S.~J., {et~al.} 2020,
+  \bibinfo{title}{Array programming with {NumPy},} Nature, 585, 357,
+  \dodoi{10.1038/s41586-020-2649-2}
+
+% type= article
+\bibitem[{T. Hsyu {et~al.}(2020)Hsyu, Cooke, Prochaska, \& Bolte}]{Hsyu_2020}
+Hsyu, T., Cooke, R.~J., Prochaska, J.~X., \& Bolte, M. 2020,
+  \bibinfo{title}{The PHLEK Survey: A New Determination of the Primordial
+  Helium Abundance,} The Astrophysical Journal, 896, 77,
+  \dodoi{10.3847/1538-4357/ab91af}
+
+% type= article
+\bibitem[{J.~D. Hunter(2007)Hunter}]{Hunter:2007}
+Hunter, J.~D. 2007, \bibinfo{title}{Matplotlib: A 2D graphics environment,}
+  Computing in Science \& Engineering, 9, 90, \dodoi{10.1109/MCSE.2007.55}
+
+% type= article
+\bibitem[{I. Juodžbalis {et~al.}(2024)Juodžbalis, Ji, Maiolino, D’Eugenio,
+  Scholtz, Risaliti, Fabian, Mazzolari, Gilli, Prandoni, Arribas, Bunker,
+  Carniani, Charlot, Curtis-Lake, de Graaff, Hainline, Parlanti, Perna,
+  Pérez-González, Robertson, Tacchella, Übler, Williams, Willott, \&
+  Witstok}]{Juod_balis_2024}
+Juodžbalis, I., Ji, X., Maiolino, R., {et~al.} 2024, \bibinfo{title}{JADES –
+  the Rosetta stone of <i>JWST</i>-discovered AGN: deciphering the intriguing
+  nature of early AGN,} Monthly Notices of the Royal Astronomical Society, 535,
+  853–873, \dodoi{10.1093/mnras/stae2367}
+
+% type= article
+\bibitem[{D.~D. Kocevski {et~al.}(2025)Kocevski, Finkelstein, Barro, Taylor,
+  Calabrò, Laloux, Buchner, Trump, Leung, Yang, Dickinson, Pérez-González,
+  Pacucci, Inayoshi, Somerville, McGrath, Akins, Bagley, Bowler, Bisigello,
+  Carnall, Casey, Cheng, Cleri, Costantin, Cullen, Davis, Donnan, Dunlop,
+  Ellis, Ferguson, Fujimoto, Fontana, Giavalisco, Grazian, Grogin, Hathi,
+  Hirschmann, Huertas-Company, Holwerda, Illingworth, Juneau, Kartaltepe,
+  Koekemoer, Li, Lucas, Magee, Mason, McLeod, McLure, Napolitano, Papovich,
+  Pirzkal, Rodighiero, Santini, Wilkins, \& Yung}]{Kocevski_2025}
+Kocevski, D.~D., Finkelstein, S.~L., Barro, G., {et~al.} 2025,
+  \bibinfo{title}{The Rise of Faint, Red Active Galactic Nuclei at z &gt; 4: A
+  Sample of Little Red Dots in the JWST Extragalactic Legacy Fields,} The
+  Astrophysical Journal, 986, 126, \dodoi{10.3847/1538-4357/adbc7d}
+
+% type= misc
+\bibitem[{V. Kokorev {et~al.}(2025)Kokorev, Chisholm, Naidu, Fujimoto, Atek,
+  Brammer, Finkelstein, Akins, Berg, Furtak, Fei, Hsiao, Labbé, Matthee,
+  Muñoz, Oesch, Pan, Rinaldi, Saldana-Lopez, Schaerer, Volonteri, \&
+  Zitrin}]{kokorev2025deepestglimpsedensegas}
+Kokorev, V., Chisholm, J., Naidu, R.~P., {et~al.} 2025, The Deepest GLIMPSE of
+  a Dense Gas Cocoon Enshrouding a Little Red Dot, \doarXiv{2511.07515}
+
+% type= article
+\bibitem[{I. Labb{\'e} {et~al.}(2023)Labb{\'e}, van Dokkum, Nelson, Bezanson,
+  Suess, Leja, Brammer, Whitaker, Mathews, Stefanon, \& Wang}]{Labbe2023}
+Labb{\'e}, I., van Dokkum, P., Nelson, E., {et~al.} 2023, \bibinfo{title}{A
+  population of red candidate massive galaxies {\textasciitilde}600 Myr after
+  the Big Bang,} Nature, 616, 266, \dodoi{10.1038/s41586-023-05786-2}
+
+% type= article
+\bibitem[{V. {Luridiana} {et~al.}(2015){Luridiana}, {Morisset}, \&
+  {Shaw}}]{2015A&A...573A..42L}
+{Luridiana}, V., {Morisset}, C., \& {Shaw}, R.~A. 2015, \bibinfo{title}{{PyNeb:
+  a new tool for analyzing emission lines. I. Code description and validation
+  of results},} \aap, 573, A42, \dodoi{10.1051/0004-6361/201323152}
+
+% type= article
+\bibitem[{J. Matthee {et~al.}(2024)Matthee, Naidu, Brammer, Chisholm, Eilers,
+  Goulding, Greene, Kashino, Labbe, Lilly, Mackenzie, Oesch, Weibel, Wuyts,
+  Xiao, Bordoloi, Bouwens, van Dokkum, Illingworth, Kramarenko, Maseda, Mason,
+  Meyer, Nelson, Reddy, Shivaei, Simcoe, \& Yue}]{Matthee_2024}
+Matthee, J., Naidu, R.~P., Brammer, G., {et~al.} 2024, \bibinfo{title}{Little
+  Red Dots: An Abundant Population of Faint Active Galactic Nuclei at z ∼ 5
+  Revealed by the EIGER and FRESCO JWST Surveys,} The Astrophysical Journal,
+  963, 129, \dodoi{10.3847/1538-4357/ad2345}
+
+% type= article
+\bibitem[{R.~P. {Naidu} {et~al.}(2025){Naidu}, {Matthee}, {Katz}, {de Graaff},
+  {Oesch}, {Smith}, {Greene}, {Brammer}, {Weibel}, {Hviding}, {Chisholm},
+  {Labb\textbackslash'e}, {Simcoe}, {Witten}, {Atek}, {Baggen}, {Belli},
+  {Bezanson}, {Boogaard}, {Bose}, {Covelo-Paz}, {Dayal}, {Fudamoto}, {Furtak},
+  {Giovinazzo}, {Goulding}, {Gronke}, {Heintz}, {Hirschmann}, {Illingworth},
+  {Inoue}, {Johnson}, {Leja}, {Leonova}, {McConachie}, {Maseda}, {Natarajan},
+  {Nelson}, {Setton}, {Shivaei}, {Sobral}, {Stefanon}, {Tacchella}, {Toft},
+  {Torralba}, {van Dokkum}, {van der Wel}, {Volonteri}, {Walter}, {Wang}, \&
+  {Watson}}]{2025arXiv250316596N}
+{Naidu}, R.~P., {Matthee}, J., {Katz}, H., {et~al.} 2025, \bibinfo{title}{{A
+  ``Black Hole Star'' Reveals the Remarkable Gas-Enshrouded Hearts of the
+  Little Red Dots},} arXiv e-prints, arXiv:2503.16596,
+  \dodoi{10.48550/arXiv.2503.16596}
+
+% type= misc
+\bibitem[{R.~P. Naidu {et~al.}(2025)Naidu, Matthee, Katz, de~Graaff, Oesch,
+  Smith, Greene, Brammer, Weibel, Hviding, Chisholm, Labbé, Simcoe, Witten,
+  Atek, Baggen, Belli, Bezanson, Boogaard, Bose, Covelo-Paz, Dayal, Fudamoto,
+  Furtak, Giovinazzo, Goulding, Gronke, Heintz, Hirschmann, Illingworth, Inoue,
+  Johnson, Leja, Leonova, McConachie, Maseda, Natarajan, Nelson, Setton,
+  Shivaei, Sobral, Stefanon, Tacchella, Toft, Torralba, van Dokkum, van~der
+  Wel, Volonteri, Walter, Wang, \& Watson}]{naidu2025blackholestarreveals}
+Naidu, R.~P., Matthee, J., Katz, H., {et~al.} 2025, A "Black Hole Star" Reveals
+  the Remarkable Gas-Enshrouded Hearts of the Little Red Dots,
+  \doarXiv{2503.16596}
+
+% type= article
+\bibitem[{E.~J. {Nelson} {et~al.}(2016){Nelson}, {van Dokkum}, {Momcheva},
+  {Brammer}, {Wuyts}, {Franx}, {F{\"o}rster Schreiber}, {Whitaker}, \&
+  {Skelton}}]{2016ApJ...817L...9N}
+{Nelson}, E.~J., {van Dokkum}, P.~G., {Momcheva}, I.~G., {et~al.} 2016,
+  \bibinfo{title}{{Spatially Resolved Dust Maps from Balmer Decrements in
+  Galaxies at z \raisebox{-0.5ex}\textasciitilde 1.4},} \apjl, 817, L9,
+  \dodoi{10.3847/2041-8205/817/1/L9}
+
+% type=
+\bibitem[{T. pandas~development team(2020)pandas~development
+  team}]{reback2020pandas}
+pandas~development team, T. 2020, pandas-dev/pandas: Pandas, latest Zenodo,
+  \dodoi{10.5281/zenodo.3509134}
+
+% type= article
+\bibitem[{V. Rusakov {et~al.}(2026)Rusakov, Watson, Nikopoulos, Brammer,
+  Gottumukkala, Harvey, Heintz, Damgaard, Sim, Sneppen, Vijayan, Adams, Austin,
+  Conselice, Goolsby, Toft, \& Witstok}]{Rusakov2026}
+Rusakov, V., Watson, D., Nikopoulos, G.~P., {et~al.} 2026,
+  \bibinfo{title}{Little red dots as young supermassive black holes in dense
+  ionized cocoons,} Nature, 649, 574, \dodoi{10.1038/s41586-025-09900-4}
+
+% type= article
+\bibitem[{Y.~R. Sun \& S.-M. Hu(2020)Sun \& Hu}]{Sun2020-um}
+Sun, Y.~R., \& Hu, S.-M. 2020, \bibinfo{title}{Precision spectroscopy of atomic
+  helium,} Natl. Sci. Rev., 7, 1818
+
+% type= article
+\bibitem[{A.~J. Taylor {et~al.}(2025)Taylor, Finkelstein, Kocevski, Jeon,
+  Bromm, Amorín, Arrabal~Haro, Backhaus, Bagley, Banados, Bhatawdekar, Brooks,
+  Calabrò, Chávez~Ortiz, Cheng, Cleri, Cole, Davis, Dickinson, Donnan,
+  Dunlop, Ellis, Fernández, Fontana, Fujimoto, Giavalisco, Grazian, Guo,
+  Hathi, Holwerda, Hirschmann, Inayoshi, Kartaltepe, Khusanova, Koekemoer,
+  Kokorev, Larson, Leung, Lucas, McLeod, Napolitano, Onoue, Pacucci, Papovich,
+  Pérez-González, Pirzkal, Somerville, Trump, Wilkins, Yung, \&
+  Zhang}]{Taylor_2025}
+Taylor, A.~J., Finkelstein, S.~L., Kocevski, D.~D., {et~al.} 2025,
+  \bibinfo{title}{Broad-line AGNs at 3.5 &lt; z &lt; 6: The Black Hole Mass
+  Function and a Connection with Little Red Dots,} The Astrophysical Journal,
+  986, 165, \dodoi{10.3847/1538-4357/add15b}
+
+% type= article
+\bibitem[{B.~�. Wang~王 {et~al.}(2025)Wang~王, de~Graaff, Davies, Greene,
+  Leja, Brammer, Goulding, Miller, Suess, Weibel, Williams, Bezanson, Boogaard,
+  Cleri, Hirschmann, Katz, Labbé, Maseda, Matthee, McConachie, Naidu, Oesch,
+  Rix, Setton, \& Whitaker}]{Wang__2025}
+Wang~王, B.~�., de~Graaff, A., Davies, R.~L., {et~al.} 2025,
+  \bibinfo{title}{RUBIES: JWST/NIRSpec Confirmation of an Infrared-luminous,
+  Broad-line Little Red Dot with an Ionized Outflow,} The Astrophysical
+  Journal, 984, 121, \dodoi{10.3847/1538-4357/adc1ca}
+
+\end{thebibliography}

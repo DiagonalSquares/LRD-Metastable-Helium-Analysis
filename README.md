@@ -111,8 +111,20 @@ Not really a file that you run, just includes helpful functions used by the othe
 ## Report Compilation
 The pdf of the report is included within the "report" directory as main.pdf.
 If you wish to compile the document yourself though, use the following commands:
+
+### Installation
+```bash
+# For Debian Based Systems:
+sudo apt install texlive-base texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
+
+# For Arch Linux:
+sudo pacman -S texlive-basic texlive-latex texlive-latexrecommended texlive-latexextra texlive-fontsrecommended
+```
 ```bash
 cd report
+pdflatex main.tex
+bibtex main
+pdflatex main.tex
 pdflatex main.tex
 cd ..
 ```

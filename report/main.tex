@@ -1,18 +1,24 @@
 \UseRawInputEncoding
-\documentclass[12pt, letterpaper]{article}
+\documentclass[letterpaper]{aastex701}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage[margin=1in]{geometry}
 \usepackage{float}
 \usepackage{natbib}
 
-\title{Little Red Dot Density and Temperature Prediction Using Triplet Helium Strengths}
-\author{Akshaj Vyas \and Ian Bishop}
-\date{July 2026}
 
 \begin{document}
 
-\maketitle
+\title{Little Red Dot Density and Temperature Prediction Using Triplet Helium Strengths}
+
+\author{Akshaj Vyas} \affiliation{Lake Travis High School} 
+\email{vyasakshaj@gmail.com}
+
+\author{Ian Bishop} 
+\affiliation{Basis Cedar Park School} 
+\email{ianbishop3851@gmail.com}
+
+\date{July 2026}
 
 \section{Introduction}
 
@@ -20,11 +26,11 @@
 
 %for later: change how we state a line to use lambda, for example, He I 10830A becomes He I lambda10830
 % Cite OCEANS paper
-Compared to previous astronomical telescopes, the James Webb Space Telescope (JWST) demonstrated a higher resolution and greater observational depth at infrared wavelengths than any previous space-based telescope. This led to the discovery of Little Red Dots (LRDs) within JWST deep-field images from the CEERS survey \citep{Finkelstein_2025}. LRDs are present in all JWST deep field images, especially at redshifts of  $4 < z < 9$. LRDs were deemed noteworthy due to a unique "v-shaped" spectral distribution, with opposite rest-UV and rest-optical slopes \citep{Matthee_2024} \citep{Kocevski_2025}. Further spectroscopy revealed the presence of unusual Balmer line broadening within the spectral distribution \citep{Kocevski_2025} \citep{Taylor_2025}. 
+Compared to previous telescopes, the James Webb Space Telescope (JWST) demonstrated a higher resolution and greater observational depth at infrared wavelengths than any previous space-based or earth-based telescope. This led to the discovery of Little Red Dots (LRDs) within JWST deep-field images from the CEERS survey \citep{Finkelstein_2025}. LRDs are present in all JWST deep field images, especially at redshifts of  $4 < z < 9$ \citep{kokorev2025deepestglimpsedensegas}. LRDs were deemed noteworthy due to a unique "v-shaped" spectral distribution, with opposite rest-UV and rest-optical slopes \citep{Matthee_2024} \citep{Kocevski_2025}. Further spectroscopy revealed the presence of unusual Balmer line broadening within the spectral distribution \citep{Kocevski_2025} \citep{Taylor_2025}. 
 
-LRDs were originally hypothesized to be overmassive early-universe galaxies, though a contradiction arose with this idea, where the predicted stellar masses within the galaxies were unexpectedly high compared to prior observations \citep{Labbe2023}. Further disproving this early hypothesis, spectroscopic investigations demonstrated that the emissions of LRDs were dominated by supermassive black hole (SMBH) light \citep{Kocevski_2025} \citep{Taylor_2025}. The most recent studies have explained the broadening by introducing a dense cocoon of excited gas surrounding the LRD \citep{2025arXiv250316596N} \cite{Rusakov2026}.
+LRDs were originally hypothesized to be large early-universe galaxies, though a contradiction arose, where the predicted stellar masses within the galaxies were unexpectedly high compared to prior observations \citep{Labbe2023}. Further spectroscopic investigations demonstrated that the spectral distributions of LRDs were dominated by supermassive black hole (SMBH) emission instead of stellar emission \citep{Kocevski_2025} \citep{Taylor_2025}. The most recent studies have explained the Balmer line broadening by introducing the idea a dense cocoon of excited gas surrounding the SMBH \citep{2025arXiv250316596N} \citep{Rusakov2026}.
 
-Previous work has focused on Hydrogen I emission lines to estimate LRD physical properties. However, the properties of Helium lines show similar broadening and absorption features as Balmer lines, indicating that the excited gas has a significant effect on the emission of Helium lines \citet{Juod_balis_2024} \citet{Wang__2025} \citet{kokorev2025deepestglimpsedensegas}  \citet{de_Graaff_2025}. This work investigates the possibility of utilizing Helium lines to predict the temperature and density of the cocooning gas enshrouding LRDs.
+Previous work has focused on Balmer emission lines to estimate the physical properties of LRDs. This work substitutes Balmer emission lines with Helium emission lines to predict the temperature and density of the hypothesized cocooning gas enshrouding LRDs. Helium emission lines show promise in being able to predict physical properties, as they exhibit similar broadening and absorption features as Balmer lines, indicating a direct relationship between the cocooning gas and the Helium flux \citep{Juod_balis_2024} \citep{Wang__2025} \citep{kokorev2025deepestglimpsedensegas}  \citep{de_Graaff_2025}.
 
 \subsection{Goals}
 
@@ -34,11 +40,9 @@ To estimate the temperature and density of LRDs, we perform spectral analysis of
 %find sources explaining all of these concepts
 The metastable He I helium line $10830\AA$ emerges when helium transitions from $1s2p^3P^\circ_J$ to $1s2s^3S_1$. The He I $10830\AA$ metastable transition is unique as its lower metastable level, known as the He I $2^3 S_1$ state, is substantially more stable than other non-ground state helium. This is due to the decay being forbidden by quantum mechanics, leading to an extremely low probability of transition. When isolated, a helium atom can remain in the $2^3 S_1$ state for about $7.8 \cdot 10^3s$ \citep{Sun2020-um}. This property of metastable helium creates a cycle between emission and absorption of free electrons, causing a strong correlation between the strength of the emission line and electron density. We take advantage of this property to accurately estimate the density of LRDs. 
 
-We compare the He I $10830\AA$ line to the H I $Pa\gamma$ line due to its consistency among the LRD sample, and close proximity to $10830\AA$, which eliminates the requirement for dust correction.
+We compare the He I $10830\AA$ line to the H I $Pa\gamma$ line due to its consistency among the LRD sample and close proximity to $10830\AA$, which eliminates the requirement for dust correction. We also use H I $Pa\gamma$ due to its relatively low sensitivity to density changes compared to H I $10830\AA$, making it a good indicator of correlation between H I $10830\AA$ and density. \citep{Aver_2015}
 
-% be sure to cite https://articles.adsabs.harvard.edu/pdf/1994ApJ...435..647I here (reminder for me)
-
-As for the He I $5876\AA$ and $7065\AA$, these emerge when Helium transitions to $2^3S$ from the states $3^3D$ and $3^3S$, respectively. He I $7065\AA$ was chosen as it is highly sensitive to electron density. This is because represents a transition along the pathway to metastable Helium, indicating the transitions, and therefore the sensitivity to electron density, are correlated. He I $5876$ was chosen as it was the most common line among the sampled LRDs.
+As for the He I $5876\AA$ and $7065\AA$, these emerge when Helium transitions to $2^3S$ from the states $3^3D$ and $3^3S$, respectively. He I $7065\AA$ was chosen as it is highly sensitive to electron density. This is because the metastable Helium is easily excited to the $3^3S$ state, leading to the population of metastable Helium being intertwined with the population of $3^3S$ Helium. This leads to both He I $7065\AA$ and He I $10832\AA$ being correlated with electron density. He I $5876$ was chosen as it was the most common line among the sampled LRDs.
 
 
 \begin{figure}[H]
@@ -51,11 +55,9 @@ As for the He I $5876\AA$ and $7065\AA$, these emerge when Helium transitions to
 
 \subsection{Data}
 %for Ian, talk about how the data used is medium resolution
-The 1-dimensional extractions used for this work are courtesy of the OCEANS collaboration. The extractions utilized the NIRSpec instrument from the JWST, probing the rest-optical observed-IR light from the LRD. We configured the telescope to the high-resolution G235H and G395H gratings, both of which covered ranges in the single-digit microns.
+The 1-dimensional extractions used for this work are courtesy of the OCEANS collaboration \citep{davis2026oceansabsorptionhighresolutionnirspec}. The extractions utilized the NIRSpec instrument from the JWST, probing the rest-optical observed-infrared light from the LRD. We configured the telescope to the high-resolution G235H and G395H gratings, both of which covered ranges in the single-digit microns. For our metastable helium analysis, we obtained precalculated narrow and broad fluxes for the He I $10830\AA$ line from \citet{Juod_balis_2024}, \citet{Wang__2025}, \citet{kokorev2025deepestglimpsedensegas}, and \citet{de_Graaff_2025}.
 
-For our metastable helium analysis, we pulled pre-calculated narrow and broad fluxes for the He I $\lambda10830$ line from \citet{Juod_balis_2024}, \citet{Wang__2025}, \citet{kokorev2025deepestglimpsedensegas}, and \citet{de_Graaff_2025}. We do this due to complexities involved with measuring this line, which are discussed more in the "Flux Measurement" section of this paper. This is also due to the rarity of these lines in LRDs, with only a handful exhibiting significant signs of the He I $\lambda10830$ line.
-
-Before we performed spectral analysis, we cleaned the data to prepare it for Flux Measurement. First, we converted the units of $\mu$m to $\AA$ and $Jy$ (or $\mu Jy$) to $erg \cdot cm^{-2} s^{-1} \AA^{-1}$. This conversion leads to LiME providing integrated flux measurements in $erg \cdot cm^{-2} s^{-1}$. Next, we adjusted the wavelength for redshift using the formula $\lambda_{rest} = \frac{\lambda_{obs}}{1+z}$, where $z$ represents the redshift. The wavelength was corrected utilizing the Python library \texttt{NumPy} \citep{harris2020array}. Although the single-digit micron range exceeds the wavelength range of visible and near-infrared light, correcting for redshift reveals the appropriate emission lines primarily in the G395H grating.
+Before we performed spectral analysis, we cleaned the data to prepare it for flux measurement. First, we converted the units of $\mu$m to $\AA$ and $Jy$ (or $\mu Jy$) to $erg \cdot cm^{-2} s^{-1} \AA^{-1}$. This conversion leads to LiME providing integrated flux measurements in $erg \cdot cm^{-2} s^{-1}$. Next, we adjusted the wavelength for redshift using the formula $\lambda_{rest} = \frac{\lambda_{obs}}{1+z}$, where $z$ represents the redshift. The wavelength was corrected utilizing the Python library \texttt{NumPy} \citep{harris2020array}. Although the single-digit micron range exceeds the wavelength range of visible and near-infrared light, correcting for redshift reveals the appropriate emission lines.
 
 
 \subsection{Flux Measurement}
@@ -64,13 +66,12 @@ Before we performed spectral analysis, we cleaned the data to prepare it for Flu
 %https://arxiv.org/abs/2403.02304 
 %https://arxiv.org/abs/2511.07515 
 %https://arxiv.org/abs/2503.16600
-% elaborate more on why 10830 is so complex
 We use the Python library LiME (Line Measuring library) to measure fluxes \citet{LiMe_paper}. We measured narrow fluxes from the observed data for He I $5876\AA$, He I $7065\AA$, and H I $10941\AA$. Because He I $10830\AA$ had a complex line shape with broad and narrow emission superimposed with absorption, we used pre-aggregated tables from prior research papers \citep{Juod_balis_2024, Wang__2025, kokorev2025deepestglimpsedensegas, de_Graaff_2025} to avoid repeating the complicated work.
 
-Next, we fit a continuum to the spectrum using a cubic equation. To eliminate emission lines from the continuum, we iteratively refit the cubic while clipping emission lines past a $\sigma$ threshold above the continuum. As the iterations progress, we gradually reduce the threshold from $3\sigma$ to $1\sigma$. Then, we performed line detection, where we utilized a neighbor comparison algorithm to detect all extrema relative to the continuum, and compared the detected extrema to LiME's internal database of known spectral lines. If a spectra excluded any of the lines, it was removed as a non-detection. The continuum fitting and line detection were implemented by LiME. However, tuning the parameters to the values mentioned was essential in order to achieve accurate line predictions. The accuracy of the line predictions was determined by visually inspecting the plots and ensuring most peaks and valleys were mapped to an appropriate emission line.
+Next, we fit a continuum to the spectrum using a cubic equation. To eliminate emission lines from the continuum, we iteratively refit the cubic while clipping emission lines past a $\sigma$ threshold above the continuum. As the iterations progress, we gradually reduce the threshold from $3\sigma$ to $1\sigma$. Then, we performed line detection, where we utilized a neighbor comparison algorithm to detect all extrema relative to the continuum, and compared the detected extrema to LiME's internal database of known spectral lines. If a spectra excluded any of the lines, it was removed as a non-detection. The continuum fitting and line detection were implemented by LiME. However, tuning the parameters to the values mentioned was essential in order to achieve accurate line predictions. The accuracy of the line predictions was determined by visually inspecting the plots to ensure most peaks and valleys were mapped to an appropriate emission line.
 
 %we can change the name to something else later, helium analysis is just a temp name, same for metastable helium analysis
-Next, we measured fluxes through profile fitting. For the He I $5876\AA$, $7065\AA$, and H I Pa$\gamma$ lines, the flux was best modeled by a Gaussian profile without broadening or blending. The Gaussian was fit through a least squares regression. We measured the flux by integrating over this Gaussian, taking into account the continuum as the floor for integration. The criteria for a false positive was a $3\sigma$ detection for Pa$\gamma\AA$ and a $2\sigma$ detection for other lines. Distributions which failed to meet this threshold were removed as non-detections.
+Next, we measured fluxes through profile fitting. For the He I $5876\AA$, $7065\AA$, and H I Pa$\gamma$ lines, the flux was best modeled by a Gaussian profile without broadening or blending. The Gaussian was fit through a least squares regression. We measured the flux by integrating over this Gaussian, taking into account the continuum as the floor for integration. The criteria for a false positive was a $3\sigma$ detection for Pa$\gamma$ and a $2\sigma$ detection for other lines. Distributions which failed to meet this threshold were removed as non-detections.
 
 % cite https://arxiv.org/abs/2403.02304 (please make better inline citation when final rpoduct)
 For He I $10830\AA$, the fluxes were loaded from previous spectroscopic papers. While Wang et al precalculated the total flux, every other source provided only the narrow, broad and absorption flux. To find the total flux, the narrow and broad flux were added together, while the absorption was reintroduced into the line profile. We calculated the error based on formulas detailed in the next section. 
@@ -83,6 +84,7 @@ Finally, we calculated $\frac{F_{5876\AA}}{{F_{7065\AA}}}$, as well as $\frac{F_
 \begin{tabular}{|c|c|c|}
     \hline
     \centering
+    \textbf{LRD} & He I $7065\AA$ flux & $5876\AA$ flux \\ \hline
     OCEANS 20504 P4 & 3.67 $\pm$ 0.72 & 8.49 $\pm$ 0.10 \\ \hline
     OCEANS 20504 P1 & 8.51 $\pm$ 1.14 & 4.79 $\pm$ 0.95 \\  \hline
     OCEANS 169045 P4 & 7.52 $\pm$ 0.68 & 3.84 $\pm$ 0.57 \\   \hline
@@ -146,7 +148,7 @@ We passed $A_V$ into the model to obtain a correction factor for each flux value
 
 \subsection{Theoretical Predictions}
 
-We used the Python library \texttt{pyneb} in order to generate theoretical predictions of emissivity ratios from density and temperature \citep{2015A&A...573A..42L}. To model a wide variety of LRD conditions, we chose a range of density logarithmically from $10^{5}$ to $10^{13}$ $cm^{-3}$, and a range of temperature linearly from 5000 $K$ and 25000 $K$. The ranges were both generated at resolutions of 100 steps, and were capped at these particular values since \texttt{pyneb} would lose precision and throw errors for values beyond this range. We computed the flux of He I $7065\AA$ and $5876\AA$ for each combination of temperature and density. Then, we calculated the ratio of these two values and stored them in a matrix.
+We used the Python library \texttt{pyneb} in order to generate theoretical predictions of emissivity ratios from density and temperature \citep{2015A&A...573A..42L}. To model a wide variety of LRD conditions, we chose a range of density logarithmically from $10^{5}$ to $10^{13}$ $cm^{-3}$, and a range of temperature linearly from 5000 $K$ and 25000 $K$. For He I $10830\AA$ and H I $Pa\gamma$, the range of density was adjusted to $10^{9}$ to $10^{15}$. The ranges were both generated at resolutions of 100 steps, and were capped at these particular values since \texttt{pyneb} would lose precision and throw an error for values beyond this range. We computed the flux of He I $7065\AA$ and $5876\AA$ for each combination of temperature and density. Then, we calculated the ratio of these two values and stored them in a matrix.
 
 Finally, we calculated the difference in flux between each place in the matrix and each observed flux value, recording the minimum difference for each observed flux. This allows us to find the temperature and density prediction closest to the observed flux.
 
@@ -167,9 +169,9 @@ Finally, we calculated the difference in flux between each place in the matrix a
 
 \subsection{Abundance Calculation}
 %paper where the formula for flux ratio is from: https://arxiv.org/pdf/1309.0047
-Using just the predictions given by \texttt{pyneb}, we are comparing two emission lines at a one-to-one ratio without taking into account the number of ions for each atom. This issue does not apply to the ratio between the He I $5876\AA$ and $7065\AA$ line though, as they both derive from triplet He I and thus have the same abundance. For this reason, we will focus on the ratio between the He I $10830\AA$ and H I Pa$\gamma$ lines.
+Using the predictions given by \texttt{pyneb}, we are comparing two emission lines at a one-to-one ratio without acknowledging the relative prevalence of different element types. This issue does not apply to the ratio between the He I $5876\AA$ and $7065\AA$ line though, as they both derive from the same element, Helium. For this reason, we will focus on the ratio between the He I $10830\AA$ and H I Pa$\gamma$ lines.
 
-In order to find the ratio between the flux of two emission lines, we must take into consideration two main components: the number of emitting ions and the emission efficiency of each ion. This can be seen in the following equation, which has been adapted for the He I $10830\AA$ and H I $10941\AA$ lines:
+In order to find the ratio between the flux of two emission lines, we must take into consideration two main components: the number of emitting ions and the emission efficiency of each ion. This can be seen in the following equation from \citet{Aver_2013}, which has been adapted for the He I $10830\AA$ and H I $10941\AA$ lines:
 
 \[
 \frac{F(\mathrm{He\,I\,\lambda10830})}{F(\mathrm{Pa\,\gamma})}
@@ -178,7 +180,7 @@ In order to find the ratio between the flux of two emission lines, we must take 
 \frac{\epsilon(\mathrm{He\,I\,\lambda10830})}{\epsilon(\mathrm{Pa\,\gamma})}
 \]
 
-Although there are other observational factors that affect the measured fluxes of these lines, they are removed from the equation because these factors affect the He I $\lambda10830$ and H I $\lambda10941$ lines similarly.
+Although there are other observational factors that affect the measured fluxes of these lines, they are removed from the equation because these factors affect the He I $10830\AA$ and H I Pa$\gamma$ lines similarly, and cancel once the ratio is calculated.
 
 \texttt{pyneb} only gives us the emission portion of the above equation:
 
@@ -195,17 +197,19 @@ We still must account for the abundance of $\mathrm{He^+}$ and $\mathrm{H^+}$ to
 \frac{\epsilon(\mathrm{H\,\alpha})}{\epsilon(\mathrm{He\,I\,\lambda7065})}
 \]
 
-Here we run into an issue though: in order to calculate the emissivity needed to find the abundance, we need a given temperature and density, but in order to get that temperature and density, we need to calculate the flux ratios that require the abundance ratio. This creates a circular loop where each component relies on the other. 
+However, we encounter an issue where in order to calculate the emissivity needed to find the abundance, we need a given temperature and density, but in order to get that temperature and density, we need to calculate the flux ratios that require the abundance ratio. This creates a circular loop where each component relies on the other. 
 
-For simplicity, we assume the abundance ratio here is approximately 0.01. We multiply each element in the Pyneb prediction matrix by this value to get a more reasonable result.
+For simplicity, we assume the abundance ratio here is approximately 0.01. We multiply each element in the Pyneb prediction matrix by this value to get a more reasonable result. % just a placeholder for now Ian will remove this once the abundance calculation is complete (after the internship)
 
 \section{Results}
 
+All plots featured in this section were created using \texttt{matplotlib} \citep{Hunter:2007}.
+
 \subsection{Metastable Flux}
 
-Analysis of the spectra for each of the 4 LRDs revealed that the $Pa\gamma$ line was prominent in all 4, and while the metastable He I $10941\AA$ line wasn't measured directly from the spectra, it was very strong in all 5 observations. It is important to note, however, that these lines were still relatively weak compared to other major features of the spectra. 
+Analysis of the spectra for each of the 4 LRDs revealed that the $Pa\gamma$ line was prominent in 4 of the 5 observations. While the metastable He I $10941\AA$ line wasn't measured directly from the spectra, it was strong in all 5 observations. It is important to note, however, that these lines were still relatively weak compared to other major features of the spectra. % is this really true for your spectrum
 
-The GLIMPSE 17775 g395m, JADES 28074 g235m, and JADES 28074 g395m observations displayed a strong fit by a Gaussian for the $Pa\gamma$ line. The RUBIES 40579 g395m and RUBIES 154183 g395m observations had more ambiguous results, with RUBIES 40579 showing signs of a blending, and RUBIES 154183 showing a detection close to the continuum.
+The GLIMPSE 17775 G395M, JADES 28074 G235M, and JADES 28074 G395M observations displayed a strong Gaussian fit for the $Pa\gamma$ line. The RUBIES 40579 G395M and RUBIES 154183 G395M observations had more ambiguous results, with RUBIES 40579 showing signs of a blending, and RUBIES 154183 showing a detection close to the continuum.
 
 \begin{figure}[H]
     \begin{minipage}{0.45\textwidth}
@@ -229,7 +233,7 @@ The GLIMPSE 17775 g395m, JADES 28074 g235m, and JADES 28074 g395m observations d
 
 Despite JADES 28074 g295m and JADES 28074 g395m being different observations, their flux measurements are relatively consistent.
 
-Error between LRDs varied heavily, ranging between $\pm$2.5 in GLIMPSE 17775 to $^{+0.35}_{-0.34}$ in RUBIES 40579. Analysis of these LRDs' ratio $\frac{F_{He\,I\,10830\AA}}{{F_{Pa\gamma}}}$ reveal a mean of ~3.01, with a standard deviation of ~1.42. We also find that a median ratio of ~3.71 is exhibited. 
+Error between LRDs varied heavily, ranging between $\pm$2.5 in GLIMPSE 17775 to $^{+0.35}_{-0.34}$ in RUBIES 40579. Analysis of these LRDs' ratio $\frac{F_{He\,I\,10830\AA}}{{F_{Pa\gamma}}}$ reveal a mean of ~3.01, with a standard deviation of $\sim$1.42. We also find that a median ratio of $\sim$3.71 is exhibited. 
 
 \subsubsection{Changes in Density Range}
 
@@ -239,16 +243,16 @@ Originally, we set the range for our Pyneb density predictions to be from $10^{5
     \begin{minipage}{0.45\textwidth}
         \includegraphics[trim={0 0 0 0},clip,width=9cm]{predicted-ratios-lower-range.png}
         \centering
-        \caption{Flux ratio prediction matrix generated by Pyneb, with density scaled logarithmically. Both the lower density and the higher density regions show similarly low flux ratio values.}
+        \caption{Flux ratio prediction matrix generated by \texttt{pyneb}, with density scaled logarithmically. Both the lower density and the higher density regions show similarly low flux ratio values.}
     \end{minipage}\hfill
     \begin{minipage}{0.45\textwidth}
         \includegraphics[trim={0 0 0 0},clip,width=9cm]{density-lines-lower-range.png}
         \centering
-        \caption{Graph showing which density lines the flux ratios are best approximated by. Density lines are chosen based on a logarithmic scale similar to that of the Pyneb matrix. Notably, the measured flux ratios fall near the lower electron density lines.}
+        \caption{Graph showing which density lines the flux ratios are best approximated by. Density lines are chosen based on a logarithmic scale similar to that of the \texttt{pyneb} matrix. Notably, the measured flux ratios fall near the lower electron density lines.}
     \end{minipage}\hfill
 \end{figure}
 
-This, however, creates similarly low flux ratios for both the extreme high-density regions in the prediction matrix and the lower-density regions. This allows for the same low flux ratio LRDs to be misidentified as being low-density, which contradicts the results seen for our He I $7065\AA$ and He I $5876\AA$ lines (discussed in the next subsection). We can see this lower density misrepresentation in Figure 6, where the LRDs fall along the lower-density lines. To accommodate for this, we change the density range for which we create our prediction matrix, now using $10^{9}$ to $10^{15}$ to eliminate the lower regions with low flux ratio.
+This, however, creates similarly low flux ratios for both the extreme high-density regions in the prediction matrix and the lower-density regions. This allows for the same low flux ratio LRDs to be misidentified as being low-density, which contradicts the results seen for our He I $7065\AA$ and He I $5876\AA$ lines (discussed in the next subsection). We can see this lower density misrepresentation in Figure 6, where the LRDs fall along the lower-density lines. To accommodate for this, we change the density range for which we create our prediction matrix, now using $10^{9}$ to $10^{15}$ to eliminate the lower regions with low flux ratio. % i think you need to explain why low density is atypical here and check with Kelcey about your argument here, cuz it seems a little fishy to me
 
 \begin{figure}[H]
     \begin{minipage}{0.45\textwidth}
@@ -294,7 +298,8 @@ Considering temperature predictions, the average predicted temperature was $1052
 
 \subsubsection{Flux Corrections from Dust Extinction}
 
-As a consequence of dust correction, all flux values significantly decreased, with the average moving from 1.29 to 0.78. However, one outlier continued to persist: OCEANS 169045 continued to emit 1.65 flux despite dust correction. Despite this anomaly, the predictions of \texttt{pyneb} were overall more accurate, causing the density predictions to be situated around $10^{11}-10^{12}$ for most LRDs. Additionally, the average temperature predictions reduced slightly to $9010 K$. The plots below were created by the Python library \texttt{matplotlib} \citep{Hunter:2007}.
+As a consequence of dust correction, all flux values significantly decreased, with the average moving from 1.29 to 0.78. However, one outlier continued to persist: OCEANS 169045 continued to exhibit a flux ratio of 1.65 despite dust correction. Despite this anomaly, the predictions of \texttt{pyneb} were overall more accurate, causing the density predictions to be situated around $10^{11}-10^{12}$ for most LRDs. AdTechnical Context: In software development, “throw an error” or “throw an exception” is the correct, professional way to describe triggering a program failure. 
+ditionally, the average temperature predictions reduced slightly to $9010 K$.
 
 \begin{figure}[H]
     \includegraphics[width=10cm]{pyneb_matrix.png}
@@ -330,10 +335,12 @@ As a consequence of dust correction, all flux values significantly decreased, wi
 
 As mentioned in the Results section, the flux ratios between $7065\AA$ and $5876\AA$ were excessively high without dust correction, with the emission of $7065\AA$ displaying two times the flux as $5876\AA$ in one scenario. However, the abnormal flux values is attributable to the fact that dust extinction amplifies the longer wavelength, $7065\AA$, stronger than the shorter wavelength, $5876\AA$. Correcting this dust extinction reduces the flux ratios and significantly increases concordance with theoretical predictions. Interestingly, dust correction does not completely resolve the problem of inaccurate flux, as several outliers continue to persist past Pyneb's prediction bounds. 
 
+Furthermore, within our results for the ratios between the metastable He I $10830\AA$ line and $Pa\gamma$ line, we see that even when dust extinction is no longer a factor affecting the ratios, our flux ratios are still pushing the boundaries of what Pyneb is able to predict. The primordial helium-to-hydrogen abundance is ~0.08 \citep{Hsyu_2020}. The abundance ratio used in this study was set as 0.01, which is a much more conservative value. Even with this conservative estimate though, we see that our LRDs fall near the bottom of our density lines, nearly falling below Pyneb's predicted ratios. These results, combined with the results of the dust corrected $\frac{F_{5876\AA}}{{F_{7065\AA}}}$ ratios allow us to reasonably conclude that dust correction ultimately plays a minimal role in explaining why these ratios seem to go beyond what Pyneb can produce.
+
 \subsection{Limitations of Models}
 % I accidentally removed a comment here oops, would you be able to add it back? I believe it was about inaccurate flux
 % https://www.aanda.org/articles/aa/full_html/2015/01/aa23152-13/aa23152-13.html
-To reiterate, LRDs are hypothesized to contain SMBHs which are surrounded by a highly dense region of gas. The density estimates reveal the gas exhibits a density of at least $10^{10} cm^{-3}$, strongly evidencing the presence of an external dense medium. This medium is likely to be optically thick and have strong collisional effects, due to the high density observed.
+To reiterate, LRDs are hypothesized to contain SMBHs surrounded by a highly dense region of gas. The density estimates reveal the gas exhibits a density of at least $10^{10} cm^{-3}$, strongly evidencing the presence of an external dense medium. This medium is likely to be optically thick and have strong collisional effects, due to the high density observed.
 
 % find sources to support this, i had them but i lost them
 % please also explain why optically thick matters
@@ -345,9 +352,9 @@ Another unique observation from this data is the low detection rate among the LR
 
 \section{Conclusions}
 
-The goal of this study was to probe the density and temperature of LRDs using Helium emission spectra. The findings indicate a moderately effective probe, capable of restricting densities to a range of $\geq 10^{11}-10^{12} cm^{-3}$. However, specific density amounts varied widely among different LRDs, with some vastly exceeding predictions. The application of dust correction was critical to arriving at reasonable results, as values significantly exceeded the theoretical predictions when it was not applied. As for temperatures, most LRDs were well-fit near the consensus of $10000 K$, although the mean slightly decreased once dust correction was applied. The high densities indicate the presence of an enshrouded supermassive black hole within the LRD, largely reaffirming the existing theory. 
+The goal of this study was to probe the density and temperature of LRDs using Helium emission spectra. The findings indicate a moderately effective probe, capable of restricting most densities to a range of $\geq 10^{11}-10^{12} cm^{-3}$. However, specific density amounts varied widely among different LRDs, with some vastly exceeding predictions. The application of dust correction was critical to arriving at reasonable results, as values significantly exceeded the theoretical predictions when it was not applied. As for temperatures, most LRDs were well-fit near the consensus of $10000 K$, although the mean slightly decreased once dust correction was applied. The high densities indicate the presence of an enshrouded supermassive black hole within the LRD, largely reaffirming the existing theory. 
 
-However, many improvements to these research methods exist, such as increased observational depth within the measurements to improve flux accuracy and expanded wavelength coverage to discover more metastable Helium lines. The comparison of the observed flux ratio to theoretical Pyneb predictions imply that more advanced modeling techniques are needed to reproduce the observed high ratios. One software tool which can accopmplish this is the Python library \texttt{CLOUDY}, which takes into account the optical depth of the measurement alongside collisional effects within the cocooning gas.
+However, many improvements to the data collection techniques exist, such as increased observational depth and expanded wavelength coverage. The comparison of the observed flux ratio to theoretical Pyneb predictions imply that more advanced modeling techniques are needed to reproduce the observed high ratios. One software tool which can accopmplish this is the Python library \texttt{CLOUDY}, which acknowledges the optical depth of the measurement alongside collisional effects within the cocooning gas.
 
 \section{Acknowledgements}
 
