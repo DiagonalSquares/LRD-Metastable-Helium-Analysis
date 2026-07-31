@@ -76,11 +76,11 @@ def main():
         }
 
         path = "../Fitted-Graphs"
-        graph_fitted(path, filename)
+        graph_fitted(spec, path, filename)
         
         #plotting LiME Graphs
         path = "../Matched-Lines"
-        graph_matched_lines(path, filename)
+        graph_matched_lines(spec, path, filename)
 
     write_data_to_json(flux_data, "../json_files/flux.json")
 
