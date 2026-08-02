@@ -8,8 +8,7 @@ import lime
 from helper import *
 
 #path to data
-research_directory = Path("/home/ianbishop/research-internship/")
-data_directory = Path(research_directory/"data")
+data_directory = Path("../data")
 
 #all data file names
 data_files = os.listdir(data_directory)
