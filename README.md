@@ -92,7 +92,7 @@ run using:
 ```bash
 python3 src/ratio_calculation.py
 ```
-Calculates the predicted ratios between the metastable helium line and the Paschen Gamma line using pyneb and calculates the actual measured ratios from the flux calculated in flux_calculation.py as well as the helium fluxes given by other sources.
+Calculates the predicted ratios between the metastable helium line and the Paschen Gamma line using pyneb and calculates the actual measured ratios from the flux calculated in flux_calculation.py as well as the helium fluxes given by other sources. Outputs final graphs to "final_plots" directory.
 
 Graphs the pyneb prediction matrix, with markers showing where the LRDs are closest to the predicted values.
 

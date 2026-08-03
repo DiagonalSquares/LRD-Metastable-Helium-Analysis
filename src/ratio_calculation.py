@@ -101,7 +101,10 @@ adjust_text(
 )
 '''
 
-plt.savefig("predicted-ratios-higher-range")    
+path = "../final_plots"
+if not os.path.exists(path):
+        os.makedirs(path)
+plt.savefig(str(path) + "/predicted-ratios-higher-range")    
 print("Filled Matrix:", matrix)
 
 #final plot
@@ -154,4 +157,4 @@ adjust_text(
 plt.xlabel("Temperature (K)")
 plt.ylabel("Flux Ratio (He I $\\lambda10830$ / H I Paschen $\\gamma$)")
 plt.legend(title=r"Electron Density (1e11cm$^{-3}$)")
-plt.savefig("density-lines-higher-range")    
+plt.savefig(str(path) + "/density-lines-higher-range")    
